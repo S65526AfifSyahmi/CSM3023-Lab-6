@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Lab 6 | Exercise</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Lab 6 - Exercise</h1>
+
+        <form action="processUser.jsp" onsubmit="return validateInput()">
+            <fieldset>
+                <legend>User Registration</legend>
+
+                <table>
+                    <tr>
+                        <td><label for="username">Username</label></td>
+                        <td><input type="text" id="username" name="username" placeholder="Enter username" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password</label></td>
+                        <td><input type="password" id="password" name="password" placeholder="Enter password" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="firstname">First name</label></td>
+                        <td><input type="text" id="firstname" name="firstname" placeholder="E.g. John" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lastname">Last name</label></td>
+                        <td><input type="text" id="lastname" name="lastname" placeholder="E.g. Smith" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br>
+                            <button type="reset">Cancel</button>
+                            <button type="submit">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+        
+        <script>
+            function validateInput() {
+                let valid = true; // Assume validity initially
+
+                // Username validation
+                let username = document.getElementById('username').value;
+                if (username.length > 15) {
+                    alert('Username cannot exceed 15 characters!');
+                    valid = false;
+                }
+
+                // Password validation
+                let password = document.getElementById('password').value;
+                if (password.length > 10) {
+                    alert('Password cannot exceed 10 characters!');
+                    valid = false;
+                }
+
+                // First name validation
+                let firstName = document.getElementById('firstname').value;
+                if (firstName.length > 50) {
+                    alert('First name cannot exceed 50 characters!');
+                    valid = false;
+                }
+
+                // Last name validation
+                let lastName = document.getElementById('lastname').value;
+                if (lastName.length > 50) {
+                    alert('Last name cannot exceed 50 characters!');
+                    valid = false;
+                }
+
+                return valid;
+            }
+        </script>
+    </body>
+</html>
